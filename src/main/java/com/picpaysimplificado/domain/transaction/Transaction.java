@@ -30,13 +30,13 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //quanto foi transferido de um usuário para o outro.
     
     private BigDecimal amount; 
-    // tipo do usuário da transacao - quem fez e quem recebeu
+    
     @ManyToOne
     @JoinColumn(name = "sender_id")
     private User sender;
+   
     @ManyToOne
     @JoinColumn(name = "receiver_Id")
     private User receiver;
